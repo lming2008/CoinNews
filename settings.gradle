@@ -1,0 +1,1 @@
+include ':app', ':usercenter', ':search', ':share', ':article', ':likes', ':setting', ':comments', ':feedback', ':about', ':collect'

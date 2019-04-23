@@ -1,0 +1,26 @@
+<resources>
+    //title
+    <string name="app_name">币圈</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">币佬</string>
+    <string name="nav_header_subtitle">币圈一天，人间一年！！</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    //action
+    <string name="action_settings">设置</string>
+    <string name="action_search">搜索</string>
+
+    //menu
+    <string name="menu_home">首页</string>
+    <string name="menu_gallery">收藏</string>
+    <string name="menu_likes">点赞</string>
+    <string name="menu_comments">评论</string>
+    <string name="menu_share">分享</string>
+    <string name="menu_about">关于我们</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_communicate">通讯</string>
+    <string name="menu_send">反馈</string>
+    <string name="app_subname">币圈大佬俱乐部</string>
+
+</resources>
