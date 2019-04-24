@@ -20,6 +20,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -43,6 +45,12 @@ import static com.example.news.R.string.menu_settings;
 
 public class BQMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    TabLayout mTabLayout;
+    ViewPager mViewPager;
+
+    List<String> mTabLayoutDataList;
+    List<Fragment> mFragmentsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +87,41 @@ public class BQMainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        TabLayout tabLayout = findViewById(R.id.tablayout);
-        ViewPager viewPager = findViewById(R.id.viewpager);
+        mTabLayout = findViewById(R.id.tablayout);
+        mViewPager = findViewById(R.id.viewpager);
 
-        List<String> titles = Arrays.asList("AAA", "BBBB");
-        List<Fragment> fragments = Arrays.asList(new Fragment(), new Fragment());
-        viewPager.setAdapter(new ViewPageAdapter(getSupportFragmentManager(), titles, fragments));
-        tabLayout.setupWithViewPager(viewPager);
+        mTabLayoutDataList = new ArrayList<String>();
+        mFragmentsList = new ArrayList<Fragment>();
+        for (int i = 0; i < 15; i++) {
+            mTabLayoutDataList.add("标题"+i);
+            mFragmentsList.add(new Fragment());
+
+        }
+
+        mViewPager.setAdapter(new ViewPageAdapter(getSupportFragmentManager(), mTabLayoutDataList, mFragmentsList));
+        mTabLayout.setupWithViewPager(mViewPager);
+
+        //
+        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                //tab项选中状态时执行
+                Log.d("TabLayout","onTabSelected");
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                //tab项取消选中状态时执行
+                Log.d("TabLayout","onTabUnselected");
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                //tab项选中状态再次点击时执行
+                Log.d("TabLayout","onTabReselected");
+            }
+
+        });
     }
 
     @Override

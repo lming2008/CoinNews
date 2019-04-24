@@ -43,4 +43,6 @@ public class ViewPageAdapter extends FragmentPagerAdapter {
     public int getItemPosition(@NonNull Object object) {
         return PagerAdapter.POSITION_NONE;
     }
+
+
 }
