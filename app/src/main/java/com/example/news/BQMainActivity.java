@@ -94,7 +94,7 @@ public class BQMainActivity extends AppCompatActivity
         mFragmentsList = new ArrayList<Fragment>();
         for (int i = 0; i < 15; i++) {
             mTabLayoutDataList.add("标题"+i);
-            mFragmentsList.add(new Fragment());
+            mFragmentsList.add(new ListFragment());
 
         }
 

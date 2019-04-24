@@ -3,9 +3,9 @@
 buildscript {
     ext.arouter_register = "1.0.2"
     repositories {
-        jcenter()
         google()
-        maven { url 'http://jitpack.io' }
+        jcenter()
+        maven { url "https://jitpack.io" }
         jcenter { url 'http://jcenter/bintray.com/' }
         maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
         maven { url 'http://s3.amazonaws.com/fabric-artifacts/public' }
@@ -22,7 +22,11 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        mavenCentral()
+        maven { url "http://jitpack.io" }
+        maven { url 'http://s3.amazonaws.com/fabric-artifacts/public' }
+        maven { url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
     }
 }
 
