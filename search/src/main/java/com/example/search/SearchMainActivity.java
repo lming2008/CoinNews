@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/news/search_main_activity")
+@Route(path = "/search/search_main_activity")
 public class SearchMainActivity extends AppCompatActivity {
 
     @Override

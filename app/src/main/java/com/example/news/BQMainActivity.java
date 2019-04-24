@@ -33,14 +33,11 @@ import okhttp3.Response;
 // arouter
 import com.alibaba.android.arouter.launcher.ARouter;
 
-// activitys
-import com.example.about.AboutMainActivity;
-import com.example.article.ArticleMainActivity;
-import com.example.search.SearchMainActivity;
-import com.example.setting.SettingMainActivity;
 
 import static com.example.news.R.string.app_name;
 import static com.example.news.R.string.app_subname;
+import static com.example.news.R.string.menu_about;
+import static com.example.news.R.string.menu_settings;
 
 // article activity
 
@@ -118,14 +115,13 @@ public class BQMainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(getApplicationContext(), SettingMainActivity.class);
-            startActivity(intent);
+            // Open Setting Activity
+            ARouter.getInstance().build("/setting/setting_main_activity")
+                    .withString("title", getString(menu_settings))
+                    .navigation();
         } else if (id == R.id.action_search) {
-            // Open Share Activity
-            ARouter.getInstance().build("/news/search_main_activity").navigation();
-
-//            Intent intent = new Intent(getApplicationContext(), SearchMainActivity.class);
-//            startActivity(intent);
+            // Open Search Activity
+            ARouter.getInstance().build("/search/search_main_activity").navigation();
         }
 
         return super.onOptionsItemSelected(item);
@@ -140,28 +136,28 @@ public class BQMainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             // Handle the camera action
-            requestBaidu();
-        } else if (id == R.id.nav_gallery) {
+            //requestBaidu();
+        } else if (id == R.id.nav_collect) {
             // Open Article Activity
-            Intent intent = new Intent(getApplicationContext(), ArticleMainActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
+            ARouter.getInstance().build("/collect/collect_main_activity").navigation();
+        } else if (id == R.id.nav_comments) {
+            // Open Comments Activity
+            ARouter.getInstance().build("/comments/comments_main_activity").navigation();
+        } else if (id == R.id.nav_likes) {
+            // Open Likes Activity
+            ARouter.getInstance().build("/likes/likes_main_activity").navigation();
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            // Open Share Activity
+            ARouter.getInstance().build("/share/share_main_activity").navigation();
+        } else if (id == R.id.nav_feedback) {
+            // Open Feedback Activity
+            ARouter.getInstance().build("/feedback/feedback_main_activity").navigation();
         } else if (id == R.id.nav_settings) {
-            // Open Settings Activity
-            Intent intent = new Intent(getApplicationContext(), SettingMainActivity.class);
-            startActivity(intent);
+            // Open Setting Activity
+            ARouter.getInstance().build("/setting/setting_main_activity").navigation();
         } else if (id == R.id.nav_about) {
             // Open About Activity
-            Intent intent = new Intent(getApplicationContext(), AboutMainActivity.class);
-            startActivity(intent);
+            ARouter.getInstance().build("/about/about_main_activity").navigation();
         }
 
         // 关闭侧边栏

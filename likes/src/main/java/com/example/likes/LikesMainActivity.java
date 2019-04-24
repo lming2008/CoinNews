@@ -6,7 +6,7 @@ import android.os.Bundle;
 // arouter
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/news/likes_main_activity")
+@Route(path = "/likes/likes_main_activity")
 public class LikesMainActivity extends AppCompatActivity {
 
     @Override

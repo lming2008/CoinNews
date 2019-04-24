@@ -6,7 +6,7 @@ import android.os.Bundle;
 // arouter
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/news/comments_main_activity")
+@Route(path = "/comments/comments_main_activity")
 public class CommentsMainActivity extends AppCompatActivity {
 
     @Override

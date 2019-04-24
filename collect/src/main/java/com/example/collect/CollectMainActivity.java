@@ -6,7 +6,7 @@ import android.os.Bundle;
 // arouter
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/news/collect_main_activity")
+@Route(path = "/collect/collect_main_activity")
 public class CollectMainActivity extends AppCompatActivity {
 
     @Override
