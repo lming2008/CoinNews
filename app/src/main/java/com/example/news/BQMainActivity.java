@@ -136,6 +136,7 @@ public class BQMainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             // Handle the camera action
+            ARouter.getInstance().build("/home/home_main_activity").navigation();
             //requestBaidu();
         } else if (id == R.id.nav_collect) {
             // Open Article Activity

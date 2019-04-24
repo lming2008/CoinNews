@@ -5,9 +5,10 @@ import android.os.Bundle;
 
 // arouter
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.example.baselibs.BaseActivity;
 
 @Route(path = "/about/about_main_activity")
-public class AboutMainActivity extends AppCompatActivity {
+public class AboutMainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

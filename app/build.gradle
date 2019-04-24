@@ -37,6 +37,11 @@ repositories {
 }
 
 dependencies {
+    //base libs
+    implementation project(':baselibs')
+
+    // home
+    implementation project(':modules:home')
 
     // user center
     implementation project(':modules:usercenter')

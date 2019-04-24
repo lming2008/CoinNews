@@ -7,9 +7,10 @@ import android.support.v7.widget.Toolbar;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.baselibs.BaseActivity;
 
 @Route(path = "/setting/setting_main_activity")
-public class SettingMainActivity extends AppCompatActivity {
+public class SettingMainActivity extends BaseActivity {
 
     @Autowired(name = "title")
     public  String titleString;
@@ -18,7 +19,6 @@ public class SettingMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //
         ARouter.getInstance().inject(this);
 
         setContentView(R.layout.activity_setting_main);
