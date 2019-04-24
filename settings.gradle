@@ -1,1 +1,1 @@
-include ':app', ':usercenter', ':search', ':share', ':article', ':likes', ':setting', ':comments', ':feedback', ':about', ':collect'
+include ':app', ':modules:usercenter', ':modules:search', ':modules:share', ':modules:article', ':modules:likes', ':modules:setting', ':modules:comments', ':modules:feedback', ':modules:about', ':modules:collect'

@@ -39,34 +39,34 @@ repositories {
 dependencies {
 
     // user center
-    implementation project(':usercenter')
+    implementation project(':modules:usercenter')
 
     // search
-    implementation project(':search')
+    implementation project(':modules:search')
 
     // share
-    implementation project(':share')
+    implementation project(':modules:share')
 
     // setting
-    implementation project(':setting')
+    implementation project(':modules:setting')
 
     // about
-    implementation project(':about')
+    implementation project(':modules:about')
 
     // likes
-    implementation project(':likes')
+    implementation project(':modules:likes')
 
     // article
-    implementation project(':article')
+    implementation project(':modules:article')
 
     // collect
-    implementation project(':collect')
+    implementation project(':modules:collect')
 
     // comments
-    implementation project(':comments')
+    implementation project(':modules:comments')
 
     // feedback
-    implementation project(':feedback')
+    implementation project(':modules:feedback')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
