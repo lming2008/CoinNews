@@ -39,6 +39,7 @@ repositories {
 }
 
 dependencies {
+
     //base libs
     implementation project(':baselibs')
 

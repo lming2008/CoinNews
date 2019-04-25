@@ -1,8 +1,11 @@
 package com.example.setting;
 
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -23,6 +26,21 @@ public class SettingMainActivity extends BaseActivity {
 
         setContentView(R.layout.activity_setting_main);
 
-        getSupportActionBar().setTitle(titleString);
+//        getSupportActionBar().setTitle(titleString);
+        TextView titleTextView = findViewById(R.id.tv_title);
+        titleTextView.setText(titleString);
+
+        ImageButton backButton = findViewById(R.id.tv_imagebutton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("back","back");
+                finish();
+            }
+        });
+    }
+
+    public void backAction() {
+
     }
 }

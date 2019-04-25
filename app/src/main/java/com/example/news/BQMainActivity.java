@@ -58,7 +58,7 @@ public class BQMainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bqmain);
 
-        // toolbar
+        // baselibs_toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(app_name);
         toolbar.setSubtitle(app_subname);
