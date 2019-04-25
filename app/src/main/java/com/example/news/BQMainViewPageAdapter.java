@@ -4,21 +4,20 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 
 import java.util.List;
 
-public class ViewPageAdapter extends FragmentStatePagerAdapter{
+public class BQMainViewPageAdapter extends FragmentStatePagerAdapter{
     private List<String> titles;
     private List<Fragment> fragments;
 
-    public ViewPageAdapter(FragmentManager fm) {
+    public BQMainViewPageAdapter(FragmentManager fm) {
         super(fm);
     }
 
-    public ViewPageAdapter(FragmentManager fm, List<String> titles, List<Fragment> fragments) {
+    public BQMainViewPageAdapter(FragmentManager fm, List<String> titles, List<Fragment> fragments) {
         this(fm);
         this.titles = titles;
         this.fragments = fragments;

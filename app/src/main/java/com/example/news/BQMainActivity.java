@@ -1,13 +1,16 @@
 package com.example.news;
 
-import android.content.Intent;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,11 +21,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Toast;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 // okhttp3
@@ -38,7 +40,6 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 import static com.example.news.R.string.app_name;
 import static com.example.news.R.string.app_subname;
-import static com.example.news.R.string.menu_about;
 import static com.example.news.R.string.menu_settings;
 
 // article activity
@@ -70,7 +71,14 @@ public class BQMainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                        .setAction("Action", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast toast = Toast.makeText(getApplicationContext(),"this is snckbar action",Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.TOP| Gravity.CENTER,0,0);
+                                toast.show();
+                            }
+                        }).show();
             }
         });
 
@@ -94,11 +102,11 @@ public class BQMainActivity extends AppCompatActivity
         mFragmentsList = new ArrayList<Fragment>();
         for (int i = 0; i < 15; i++) {
             mTabLayoutDataList.add("标题"+i);
-            mFragmentsList.add(new ListFragment());
+            mFragmentsList.add(new BQMainListFragment());
 
         }
 
-        mViewPager.setAdapter(new ViewPageAdapter(getSupportFragmentManager(), mTabLayoutDataList, mFragmentsList));
+        mViewPager.setAdapter(new BQMainViewPageAdapter(getSupportFragmentManager(), mTabLayoutDataList, mFragmentsList));
         mTabLayout.setupWithViewPager(mViewPager);
 
         //
@@ -107,6 +115,8 @@ public class BQMainActivity extends AppCompatActivity
             public void onTabSelected(TabLayout.Tab tab) {
                 //tab项选中状态时执行
                 Log.d("TabLayout","onTabSelected");
+
+                showDialog();
             }
 
             @Override
@@ -172,7 +182,10 @@ public class BQMainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             // Handle the camera action
-            ARouter.getInstance().build("/home/home_main_activity").navigation();
+            //ARouter.getInstance().build("/home/home_main_activity").navigation();
+            Toast toast = Toast.makeText(getApplicationContext(),"This is string",Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP| Gravity.CENTER,0,0);
+            toast.show();
             //requestBaidu();
         } else if (id == R.id.nav_collect) {
             // Open Article Activity
@@ -224,5 +237,37 @@ public class BQMainActivity extends AppCompatActivity
                 }
             }
         });
+    }
+
+    //
+    public void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提示");
+        builder.setMessage("是否确定");
+        builder.setIcon(R.drawable.ic_menu_camera);
+        builder.setCancelable(false);
+        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNeutralButton("dismiss", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        Dialog dialog = builder.create();
+        dialog.show();
     }
 }

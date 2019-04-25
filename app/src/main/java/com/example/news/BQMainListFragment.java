@@ -15,7 +15,7 @@ import com.example.baselibs.DBViewHolder;
 
 import java.util.Arrays;
 
-public class ListFragment extends BaseFragment {
+public class BQMainListFragment extends BaseFragment {
 
 
     private RecyclerView recyclerView;
@@ -31,7 +31,7 @@ public class ListFragment extends BaseFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerView = view.findViewById(R.id.recycleView);
 
-        adapter = new BaseQuickAdapter<String, DBViewHolder>(R.layout.item_list_string) {
+        adapter = new BaseQuickAdapter<String, DBViewHolder>(R.layout.list_item_left_image_right_text) {
             @Override
             protected void convert(DBViewHolder holder, String item) {
                 holder.bindTo(BR.item, item);
