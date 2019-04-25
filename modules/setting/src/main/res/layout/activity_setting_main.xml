@@ -7,30 +7,7 @@
     tools:context=".SettingMainActivity"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:background="@color/Blue_Grey"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/tv_imagebutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/ic_action_clear" />
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:layout_centerInParent="true"
-            android:textSize="@dimen/sp_18"
-            android:textColor="@color/White"/>
-
-    </RelativeLayout>
+    <include layout="@layout/baselibs_toolbar"/>
 
     <FrameLayout
         android:layout_width="match_parent"

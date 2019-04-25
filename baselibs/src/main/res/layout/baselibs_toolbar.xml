@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/toolbar"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorPrimary"
-    android:fitsSystemWindows="true"
-    android:minHeight="?attr/actionBarSize"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+    android:paddingTop="@dimen/dp_5"
+    android:paddingBottom="@dimen/dp_5"
+    android:background="@color/Blue_Grey"
+    android:orientation="horizontal">
 
-</android.support.v7.widget.Toolbar>
+    <ImageButton
+        android:id="@+id/tv_imagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_action_clear" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/White"/>
+
+</RelativeLayout>

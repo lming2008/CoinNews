@@ -9,7 +9,8 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.baselibs_activity_base);
+        //setContentView(R.layout.baselibs_activity_base);
+
 
     }
 }

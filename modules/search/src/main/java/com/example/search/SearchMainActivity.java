@@ -11,6 +11,8 @@ public class SearchMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_main);
+        setContentView(R.layout.search_activity_search_main);
+
+
     }
 }
